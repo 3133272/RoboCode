@@ -1,0 +1,29 @@
+Robocode is a programming game where you write the AI (robot “brain”) for a virtual battle tank. Your robot competes against others in an arena, where the objective is to outsmart and destroy enemy robots using code. Robots move around a battlefield, scan for enemies with radar, and fire bullets.
+
+Java code (or .NET code if using that version) to control movement, targeting, firing, and strategies. It's widely used for learning AI, algorithms, and Java programming in a fun and competitive way。
+
+In this project, me and my teammates have made our tank to be:
+
+Appearance:
+Robot body = blue
+Gun = green
+Bullets = yellow
+
+Radar & Gun Setup:
+Radar spins continuously to keep scanning.
+Gun and radar move independently of the robot’s body.
+
+Movement:
+Normally moves forward while turning at a 45° angle (creates circling motion).
+If too close to walls → calculates direction back toward the center and moves away.
+
+Enemy Detection (onScannedRobot):
+When an enemy is spotted, turns the gun toward it.
+Fires (but currently firepower is set incorrectly to 1000, should be 0.1–3).
+Keeps radar locked on the enemy.
+
+Getting Hit (onHitByBullet):
+When hit by a bullet, turns perpendicular to the incoming fire and moves forward to try dodging.
+
+Utility:
+Includes an angle normalization helper so turning angles stay within [-180°, 180°].
